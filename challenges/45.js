@@ -10,9 +10,24 @@
 
 
 function max_end3(int_array){
-  // Add functionality here!
-  return
-}
-
+  if(int_array[0] >= int_array[1] && int_array[0] >= int_array[2]){
+    int_array[1] = int_array[0];
+    int_array[2] = int_array[0];
+    return int_array;
+  } else if(int_array[1] >= int_array[0] && int_array[1] >= int_array[2]){
+    int_array[0] = int_array[1];
+    int_array[2] = int_array[1];
+    return int_array;
+  } else{
+    int_array[0] = int_array[2];
+    int_array[1] = int_array[2];
+    return int_array;
+  };
+};
+  console.log(max_end3([11, 3, 11])); //expected => [11, 11, 11] actual => [11, 11, 11]
+  console.log(max_end3([5 , 5, 1])); //expected => [5, 5, 5] actual => [5, 5, 5]
+  console.log(max_end3([4, 1, 4])); //expected => [4, 4, 4] actual => [4, 4, 4]
+  console.log(max_end3([12, 45, 1])); //expected => [45, 45, 45] actual => [45, 45, 45]
+  console.log(max_end3([1, 1, 1])); //expected => [1, 1, 1] actual => [1, 1, 1]
 
 module.exports = max_end3;
